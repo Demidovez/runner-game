@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using GroundSpawnerSpace;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,12 +9,13 @@ namespace GroundSpace
     public class GroundTile : MonoBehaviour
     {
         public GameObject[] ObstaclePrefabs;
-        public Transform[] ObstacleSpawnPoints;
+        public Transform[] ObstacleLines;
+        public LayerMask LayerMask;
         [SerializeField] private float _timeDestroy;
 
         private void Start()
         {
-            SpawnObstacle();
+            StartCoroutine(SpawnObstacle());
         }
 
         private void OnTriggerEnter(Collider other)
@@ -23,12 +25,27 @@ namespace GroundSpace
             Destroy(gameObject, _timeDestroy);
         }
 
-        private void SpawnObstacle()
+        private IEnumerator SpawnObstacle()
         {
-            var chooseSpawnPrefab = ObstaclePrefabs[Random.Range(0, ObstaclePrefabs.Length)];
-            var obstaclePoint = ObstacleSpawnPoints[Random.Range(0, ObstacleSpawnPoints.Length)].position;
+            foreach (var obstacleSpawnPoints in ObstacleLines)
+            {
+                foreach (Transform obstacle in obstacleSpawnPoints)
+                {
+                    var obstaclePoint = obstacle.position;
+                    bool hasPreviousObstacle = Physics.Linecast(obstaclePoint, obstaclePoint - new Vector3(0, 0, 15), LayerMask);
+                    bool hasHereObstacle = Physics.Linecast(obstaclePoint + new Vector3(0, 10, 0), obstaclePoint, LayerMask);
 
-            Instantiate(chooseSpawnPrefab, obstaclePoint, Quaternion.identity);
+                    if (hasPreviousObstacle || hasHereObstacle)
+                    {
+                        continue;
+                    }
+
+                    var chooseSpawnPrefab = ObstaclePrefabs[Random.Range(0, ObstaclePrefabs.Length)];
+                    Instantiate(chooseSpawnPrefab, obstaclePoint, Quaternion.identity);
+
+                    yield return null;
+                }
+            }
         }
     }
 }
