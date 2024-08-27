@@ -702,9 +702,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsAlive: 1
-  MaxRunSpeed: 2
-  HorizontalSpeed: 5
-  JumpForce: 200
+  MaxRunSpeed: 5
+  HorizontalSpeed: 7
+  JumpForce: 400
   GroundMask:
     serializedVersion: 2
     m_Bits: 1024

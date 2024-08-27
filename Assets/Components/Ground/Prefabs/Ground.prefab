@@ -162,7 +162,7 @@ Transform:
   m_GameObject: {fileID: 2491192319391356220}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.42, y: 0, z: -10}
+  m_LocalPosition: {x: 3.42, y: 0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -240,11 +240,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97ce04b93aecb6a4c8c28fcd221d8164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObstaclePrefab:
-  - {fileID: 2491192319391356220}
-  - {fileID: 6749419222444624235}
-  - {fileID: 5755650851878990065}
-  SpawnPoint: {fileID: 346631610903678671}
+  ObstaclePrefabs:
+  - {fileID: 3392699673844722299, guid: 4703a44f88bd7014fb910b292e71e34e, type: 3}
+  - {fileID: 8723808878758380040, guid: 2001340970af98e44a5299b943d3fad0, type: 3}
+  - {fileID: 4339955973734629702, guid: 9b388a2c7ee4d3a41a599c2693812876, type: 3}
+  ObstacleSpawnPoints:
+  - {fileID: 3812443430954371870}
+  - {fileID: 8866737649797470967}
+  - {fileID: 8462977689411635109}
   _timeDestroy: 15
 --- !u!1 &5755650851878990065
 GameObject:
@@ -271,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 5755650851878990065}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.98, y: 0, z: -10}
+  m_LocalPosition: {x: -3.98, y: 0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -302,7 +305,7 @@ Transform:
   m_GameObject: {fileID: 6749419222444624235}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
