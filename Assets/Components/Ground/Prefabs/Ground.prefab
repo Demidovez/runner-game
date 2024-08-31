@@ -410,7 +410,7 @@ Transform:
   m_GameObject: {fileID: 2491192319391356220}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.02, y: 1.5, z: -10}
+  m_LocalPosition: {x: -3, y: 1.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -448,7 +448,7 @@ Transform:
   m_GameObject: {fileID: 2727862622036888216}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.17, y: 1.5, z: -10}
+  m_LocalPosition: {x: 3.5, y: 1.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -872,6 +872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 99400533642878087}
   - component: {fileID: 8220729695069291114}
+  - component: {fileID: 5924945051433555983}
   m_Layer: 10
   m_Name: DeadZone
   m_TagString: Untagged
@@ -888,7 +889,7 @@ Transform:
   m_GameObject: {fileID: 7899046257153675939}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: -5}
+  m_LocalPosition: {x: 0, y: -2.48, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -909,12 +910,24 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 20, y: 0.5, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5924945051433555983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7899046257153675939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762d6a3f2a3988c49a3ceefdc26fea68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8908966133815532145
 GameObject:
   m_ObjectHideFlags: 0
